@@ -4,20 +4,22 @@ import java.util.Scanner;
 
 public class Main {
     public static String[] pakli = new String[21];
+    public static String[] szinek = {"Piros", "Zöld", "Makk", "Tök"};
+    public static String[] szamok = {"7", "8", "9", "10", "Alsó", "Felső"};;
     public static int tippelesekSzama = 0;
     
     public static void alaphelyzet() {
-        String[] szinek = {"Piros", "Zöld", "Tök"};
-        String[] szamok = {"7", "8", "9", "10", "Alsó", "Felső", "Király"};
-        
-        for(int i = 0; i < pakli.length; i++) {
-            for(int j = 0; j < szamok.length; j++) {
-                for(int k = 0; k < szinek.length; k++) {
-                    pakli[i] = szinek[k] + szamok[j];
-                }
+        int i = 0, j = 0, k = 0;
+        while(i < pakli.length) {
+            pakli[i] = szinek[j] + szamok[k];
+            k++;
+            if(k == szamok.length) {
+                k = 0;
+                j++;
             }
+            // System.out.println(pakli[i]);
+            i++;
         }
-        
     }
     
     public static void mutat() {
